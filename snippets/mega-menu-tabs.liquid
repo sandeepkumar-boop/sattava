@@ -1,0 +1,40 @@
+{% for block in blocks %}
+	{% assign mega_menu_tabs_trigger = block.settings.mega_menu_tabs_trigger | handle | strip %}
+	{% if link.handle == mega_menu_tabs_trigger and block.type == 'mega_menu_tabs' %}
+		<div class='mega-menu__tabs'>
+			{% for i in (1..6) %}
+				{%- assign enable_tab_setting = 'enable_tab_' | append: i -%}
+				{%- assign heading_setting = 'heading_' | append: i -%}
+				{%- assign menu_setting = 'menu_' | append: i -%}
+
+				{% if block.settings[enable_tab_setting] %}
+					<div class='mega-menu__tab'>
+						<div class='mega-menu__tab-wrapper {% if forloop.index == 1 %}mega-menu__tab-wrapper--active{% endif %}'>
+							<div class='mega-menu__tab-info'>
+								{%- if block.settings[heading_setting] != blank -%}
+									<h6 class='mega-menu__tab-heading h6'>
+										{{ block.settings[heading_setting] }}
+									</h6>
+								{%- endif -%}
+							</div>
+							{%- if block.settings[menu_setting] != blank -%}
+								<ul class='mega-menu__tab-list list-unstyled' role='list'>
+									{%- for link in block.settings[menu_setting].links -%}
+										<li class='mega-menu__tab-list-item body-small'>
+											<a
+												href='{{ link.url }}'
+												class='mega-menu__tab-list-link focus-inset'
+												aria-label='{{ link.title | escape }}'>
+												{{- link.title | escape -}}
+											</a>
+										</li>
+									{% endfor %}
+								</ul>
+							{%- endif -%}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,76 @@
+{% comment %}
+		Renders a horizontal collection card
+		Accepts:
+		- collection_card_collection: {Object} Collection Liquid object (optional)
+		- media_size: {String} Size of the collection image card. Values are "square" and "portrait". Default is "square" (optional)
+		Usage:
+	{% render 'collection-card-horizontal',
+		collection_card_collection: collection,
+		media_size: 'square'
+	%}
+{% endcomment %}
+
+<div class="card-horizontal-wrapper color-{{ settings.card_color_scheme }}" data-collection="{{ collection_card_collection.handle }}">
+	<span class="visually-hidden">{{ collection_card_collection.title | escape }}</span>
+
+	<div class="card-horizontal__image" tabindex="-1">
+		{%- liquid
+			assign collection_image = collection_card_collection.featured_image
+			if collection_image == blank and collection_card_collection.products.size > 0
+				assign collection_image = collection_card_collection.products[0].featured_media
+			endif
+		-%}
+
+		<div class="media"
+			{%- if media_size == 'landscape' -%}
+				style="padding-bottom: 70%;"
+			{%- endif -%}
+			{%- if media_size == 'portrait' -%}
+				style="padding-bottom: 125%;"
+			{%- endif -%}
+			{%- if media_size == 'square' -%}
+				style="padding-bottom: 100%;"
+			{%- endif -%}
+		>
+			{%- if collection_image != blank -%}
+				{{ collection_image | image_url: width: collection_image.width | image_tag:
+					loading: 'lazy',
+					class: "motion-reduce media--first"
+				}}
+			{%- else -%}
+				{{ 'collection-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+			{%- endif -%}
+		</div>
+	</div>
+
+	<div class="card-horizontal__information">
+		<div class="card-horizontal__information-group">
+			<h3 class="card-horizontal__title">
+				<a class="full-unstyled-link" href="{{ collection_card_collection.url | default: '#' }}" title="{{ collection_card_collection.title | escape }}">
+					{{ collection_card_collection.title | escape }}
+				</a>
+			</h3>
+
+			{%- if collection_card_collection.description != blank -%}
+				<p class="card-horizontal__description">
+					{{ collection_card_collection.description | strip_html | truncatewords: 15 }}
+				</p>
+			{%- endif -%}
+		</div>
+
+		<div class="card-horizontal__bottom">
+			{%- if collection_card_collection.products_count != blank -%}
+				<div class="card-horizontal__count">
+					{{ collection_card_collection.products_count }} 
+					{% if collection_card_collection.products_count == 1 %}
+						product
+					{% else %}
+						{{ 'general.search.products' | t }}
+					{% endif %}
+				</div>
+			{%- endif -%}
+		</div>
+	</div>
+	<a href="{{ collection_card_collection.url | default: '#' }}" class="link link--overlay card-wrapper__link--overlay" aria-label="{{ collection_card_collection.title | escape }}"></a>
+</div>
+

@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "Explore Our Collections",
+        "sort": "alphabetical_reversed",
+        "image": "collection",
+        "image_ratio": "landscape",
+        "image_fit": "cover",
+        "show_desc": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

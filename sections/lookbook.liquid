@@ -1,0 +1,666 @@
+{{ 'section-lookbook.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'lookbook.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  {% render 'section-margin' %}
+{%- endstyle -%}
+
+<div
+  class="lookbook {%if section.settings.full_width %} lookbook--full-width {% endif %}"
+>
+  <div class="{%if section.settings.full_width == false %} container {% endif %}">
+    {%- if section.settings.subheading != blank and section.settings.heading != blank -%}
+      <div class="lookbook__subtitle subtitle">
+        {{ section.settings.subheading }}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank and section.settings.heading == blank -%}
+      <div class="lookbook__subtitle subtitle">
+        {{ section.settings.subheading }}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="lookbook__title title--section-m-none {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+    <div class="lookbook__wrapper lookbook__swiper" data-autoheight="{{ section.settings.adapt_height }}">
+      <div class="lookbook__slides {% if section.settings.adapt_width %} lookbook__slides--adapt-width {% endif %}" id="{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'lookbook_slide' -%}
+              <div
+                class="lookbook__slide lookbook__slide--slide"
+                {{ block.shopify_attributes }}
+              >
+                <div
+                  class="lookbook__slide-content"
+                >
+                  {%- if block.settings.button_show -%}
+                    <span class="lookbook__overlay"></span>
+                  {%- endif -%}
+                  <div class="lookbook__slide-image">
+                    {% if block.settings.image != blank %}
+                      {% capture sizes %} 
+												(min-width: 1360px) calc((100vw - 128px)), (min-width: 990px) calc((100vw - 40px)), (min-width: 576px) calc((100vw - 40px)), calc((100vw - 40px))
+											{% endcapture %}
+                      {{
+                        block.settings.image
+                        | image_url: width: 1000
+                        | image_tag: loading: 'lazy', sizes: sizes, widths: '360, 535, 750, 900, 1000'
+                      }}
+
+                    {% else %}
+                      {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                  </div>
+                  {%- if block.settings.button_show -%}
+                    <a
+                      {% if block.settings.button_link != blank %}
+                        href="{{ block.settings.button_link }}"
+                      {% endif %}
+                      class="lookbook__button button button--{{ block.settings.button_style }} focus-inset"
+                      {% if block.settings.button_link == blank %}
+                        aria-disabled="true"
+                      {% endif %}
+                    >
+                      {{ block.settings.button_label }}
+                    </a>
+                  {%- endif -%}
+                  <a
+                    {% if block.settings.button_link.url != blank %}
+                      href="{{ block.settings.button_link }}"
+                    {% endif %}
+                    class="lookbook__link-overlay"
+                    {% if block.settings.button_link.url == blank %}
+                      aria-disabled="true"
+                    {% endif %}
+                    aria-label="Link"
+                  ></a>
+                </div>
+              </div>
+            {%- when 'lookbook_image' -%}
+              <div
+                class="lookbook__slide lookbook__slide--image"
+                {{ block.shopify_attributes }}
+              >
+                <div class="lookbook__slide-content">
+                  <div class="lookbook__slide-image">
+                    {% if block.settings.image != blank %}
+                      {% capture sizes %} 
+												(min-width: 1360px) calc((100vw - 128px)), (min-width: 990px) calc((100vw - 40px)), (min-width: 576px) calc((100vw - 40px)), calc((100vw - 40px))
+											{% endcapture %}
+                      {{
+                        block.settings.image
+                        | image_url: width: 1440
+                        | image_tag: loading: 'lazy', sizes: sizes, widths: '360, 535, 750, 900, 1000, 1100, 1256, 1440'
+                      }}
+                    {% else %}
+                      {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {%- when 'lookbook_video' -%}
+                <div
+                  class="lookbook__slide lookbook__slide--video"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="lookbook__slide-content">
+                    {% if block.settings.video != blank %}
+                        {% liquid
+                        assign muted = block.settings.muted_video
+                        assign playsinline = false
+                        assign autoPlay = false
+  
+                        if block.settings.autoplay_video == true
+                          assign muted = true
+                          assign autoPlay = true
+                        endif
+                      %}
+                      <div
+                        class="lookbook__slide-video lookbook__slide_show__video {% if block.settings.autoplay_video %} autoplay {% endif %}"
+                        data-video-id="{{ block.settings.video.id }}"
+                      >
+                        {% if block.settings.video != blank %}
+                          {{
+                            block.settings.video
+                            | video_tag:
+                              image_size: '1920x',
+                              autoplay: autoPlay,
+                              loop: block.settings.loop_video,
+                              muted: muted,
+                              playsinline: playsinline,
+                              title: block.settings.description_video
+                          }}
+                        {% else %}
+                          <iframe
+                            src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}?{%- if block.settings.autoplay_video -%}autoplay=1&autopause=0{%- else -%}autoplay=0{%- endif -%}{%- if muted == true -%}&muted=1{%- endif -%}&controls=false{%- if block.settings.loop_video -%}&loop=true{%- endif -%}"
+                            class="js-slide-vimeo {% if muted == true %} video-muted {% endif %}"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen
+                            title="{{ block.settings.description_video | escape }}"
+                            data-id="{{ block.settings.video_url.id }}"
+                          ></iframe>
+                          {%- endif -%}
+                      </div>
+                      {% if block.settings.show_icon_play %}
+                        <button
+                          class="button--unstyled button--play js-slide-play-video {% if block.settings.full_link == false or block.settings.button_link == blank %} button--play_full {% endif %} color-{{ block.settings.buttons_color_scheme }}"
+                          aria-label=" {{ 'general.video.play' | t }}">
+                          <span>
+                            <span class="button-icon {% if block.settings.autoplay_video == false %} icon-hidden {% endif %}">
+                              {% render 'icon-pause-colored' %}
+                            </span>
+                            <span class="button-icon {% if block.settings.autoplay_video == true %} icon-hidden {% endif %}">
+                              {% render 'icon-play' %}
+                            </span>
+                          </span>
+                        </button>
+                      {% endif %}
+                      {% if block.settings.show_icon_sound %}
+                        <button class="button--unstyled button--sound js-slide-sound-video color-{{ block.settings.buttons_color_scheme }}"
+                          aria-label=" {{ 'general.video.sound' | t }}">
+                          <span>
+                            <span class="button-icon {% if muted == false %} icon-hidden {% endif %}">
+                              {% render 'icon-sound-off-colored' %}
+                            </span>
+                            <span class="button-icon {% if muted == true %} icon-hidden {% endif %}">
+                              {% render 'icon-sound-on-colored' %}
+                            </span>
+                          </span>
+                        </button>
+                      {% endif %}
+                    {% else %}
+                      {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                  </div>
+                </div>
+            {%- when 'lookbook_text' -%}
+              <div
+                class="lookbook__slide lookbook__slide--{{ block.settings.text_position }} lookbook__slide--text color-{{ block.settings.color_scheme }} background"
+                {{ block.shopify_attributes }}
+              >
+                <div class="lookbook__slide-content lookbook__slide-content">
+                  {%- if block.settings.subheading != blank -%}
+                    <div class="lookbook__subheading subtitle">
+                      {{ block.settings.subheading }}
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.heading != blank -%}
+                    <h2 class="lookbook__heading title--section-m-none {{ block.settings.heading_size }}">
+                      {{ block.settings.heading }}
+                    </h2>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <div class="lookbook__text">
+                      {{ block.settings.text }}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if block.settings.button_show -%}
+                    <a
+                      {% if block.settings.button_link != blank %}
+                        href="{{ block.settings.button_link }}"
+                      {% endif %}
+                      class="lookbook__button button button--{{ block.settings.button_style }} focus-inset"
+                      {% if block.settings.button_link == blank %}
+                        aria-disabled="true"
+                      {% endif %}
+                    >
+                      {{ block.settings.button_label }}
+                    </a>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.bottom_image != blank -%}
+									{% assign width_2x = block.settings.bottom_image_width | times: 2 %}
+                  <div class="lookbook__image-wrapper">
+                    <img
+                      srcset="{{ block.settings.bottom_image | image_url: width: block.settings.bottom_image_width }} 1x, {{ section.settings.bottom_image | image_url: width: width_2x }} 2x"
+                      src="{{ block.settings.bottom_image | image_url: width: block.settings.bottom_image_width }}"
+                      width="{{ block.settings.bottom_image_width }}"
+                      height="auto"
+                      loading="lazy"
+                      class="lookbook__image lookbook__image--bottom"
+                    >
+                    {%- if block.settings.bottom_image_2 != blank -%}
+                      <img
+                        srcset="{{ block.settings.bottom_image_2 | image_url: width: block.settings.bottom_image_width }} 1x, {{ block.settings.bottom_image_2 | image_url: width: width_2x }} 2x"
+                        src="{{ block.settings.bottom_image_2 | image_url: width: block.settings.bottom_image_width }}"
+                        width="{{ block.settings.bottom_image_width }}"
+                        height="auto"
+                        loading="lazy"
+                        class="lookbook__image lookbook__image--bottom lookbook__image--bottom-dark"
+                      >
+                    {%- endif -%}
+                  </div>
+                {%- elsif block.settings.bottom_image_2 != blank -%}
+									{% assign width_2x = block.settings.bottom_image_width | times: 2 %}
+                  <div class="lookbook__image-wrapper">
+                    <img
+                      srcset="{{ block.settings.bottom_image_2 | image_url: width: block.settings.bottom_image_width }} 1x, {{ block.settings.bottom_image_2 | image_url: width: width_2x }} 2x"
+                      src="{{ block.settings.bottom_image_2 | image_url: width: block.settings.bottom_image_width }}"
+                      width="{{ block.settings.bottom_image_width }}"
+                      height="auto"
+                      loading="lazy"
+                      class="lookbook__image lookbook__image--bottom lookbook__image--bottom-dark"
+                    >
+                  </div>
+                {%- endif -%}
+              </div>
+          {% endcase %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.lookbook.name",
+  "tag": "section",
+  "class": "spaced-section section-lookbook",
+  "enabled_on": {
+    "templates": ["*"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:sections.lookbook.settings.subheading.label",
+      "default": "t:sections.lookbook.settings.subheading.default"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.lookbook.settings.heading.label",
+      "default": "t:sections.lookbook.settings.heading.default"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": false,
+      "label": "t:sections.lookbook.settings.full_width.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "adapt_width",
+      "default": false,
+      "label": "t:sections.lookbook.settings.adapt_width.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "adapt_height",
+      "default": false,
+      "label": "t:sections.lookbook.settings.adapt_height.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section-margin.header.content"
+    },
+    {
+      "type": "select",
+      "id": "margin_top",
+      "options": [
+        {
+          "value": "no-indent",
+          "label": "t:sections.all.section-margin.options__1.label"
+        },
+        {
+          "value": "xs",
+          "label": "t:sections.all.section-margin.options__2.label"
+        },
+        {
+          "value": "s",
+          "label": "t:sections.all.section-margin.options__3.label"
+        },
+        {
+          "value": "m",
+          "label": "t:sections.all.section-margin.options__4.label"
+        },
+        {
+          "value": "l",
+          "label": "t:sections.all.section-margin.options__5.label"
+        },
+        {
+          "value": "xl",
+          "label": "t:sections.all.section-margin.options__6.label"
+        }
+      ],
+      "default": "m",
+      "label": "t:sections.all.section-margin.margin_top.label"
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "options": [
+        {
+          "value": "no-indent",
+          "label": "t:sections.all.section-margin.options__1.label"
+        },
+        {
+          "value": "xs",
+          "label": "t:sections.all.section-margin.options__2.label"
+        },
+        {
+          "value": "s",
+          "label": "t:sections.all.section-margin.options__3.label"
+        },
+        {
+          "value": "m",
+          "label": "t:sections.all.section-margin.options__4.label"
+        },
+        {
+          "value": "l",
+          "label": "t:sections.all.section-margin.options__5.label"
+        },
+        {
+          "value": "xl",
+          "label": "t:sections.all.section-margin.options__6.label"
+        }
+      ],
+      "default": "m",
+      "label": "t:sections.all.section-margin.margin_bottom.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "lookbook_slide",
+      "name": "t:sections.lookbook.blocks.lookbook_slide.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.lookbook.blocks.lookbook_slide.settings.image.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.button.header_button.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_show",
+          "default": true,
+          "label": "t:sections.all.button.button_show.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "t:sections.lookbook.blocks.lookbook_image.settings.button.default",
+          "label": "t:sections.all.button.button_label.label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.all.button.button_link.label"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.all.button.button_style.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.all.button.button_style.options__2.label"
+            },
+            {
+              "value": "tertiary",
+              "label": "t:sections.all.button.button_style.options__3.label"
+            }
+          ],
+          "default": "primary",
+          "label": "t:sections.all.button.button_style.label"
+        }
+      ]
+    },
+    {
+      "type": "lookbook_text",
+      "name": "t:sections.lookbook.blocks.lookbook_text.name",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "default": "background-1",
+          "label": "t:sections.all.color_scheme.label"
+        },
+        {
+          "type": "select",
+          "id": "text_position",
+          "options": [
+            {
+              "value": "top",
+              "label": "t:sections.lookbook.blocks.lookbook_text.settings.text_position.options__1.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.lookbook.blocks.lookbook_text.settings.text_position.options__2.label"
+            },
+            {
+              "value": "bottom",
+              "label": "t:sections.lookbook.blocks.lookbook_text.settings.text_position.options__3.label"
+            }
+          ],
+          "default": "center",
+          "label": "t:sections.lookbook.blocks.lookbook_text.settings.text_position.label"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "t:sections.all.subheading.label",
+          "default": "t:sections.lookbook.blocks.lookbook_text.settings.subheading.default"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.all.heading.label",
+          "default": "t:sections.lookbook.blocks.lookbook_text.settings.heading.default"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.all.text.label",
+          "default": "t:sections.lookbook.blocks.lookbook_text.settings.description.default"
+        },
+        {
+          "type": "image_picker",
+          "id": "bottom_image",
+          "label": "t:sections.lookbook.blocks.lookbook_text.settings.bottom_image.label",
+          "info": "t:sections.lookbook.blocks.lookbook_text.settings.bottom_image.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "bottom_image_2",
+          "label": "t:sections.lookbook.blocks.lookbook_text.settings.bottom_image_2.label"
+        },
+				{
+          "type": "range",
+          "min": 50,
+          "max": 200,
+          "default": 150,
+					"step": 5,
+          "unit": "px",
+          "id": "bottom_image_width",
+          "label": "t:sections.lookbook.blocks.lookbook_text.settings.bottom_image_width.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.button.header_button.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_show",
+          "default": true,
+          "label": "t:sections.all.button.button_show.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "t:sections.lookbook.blocks.lookbook_text.settings.button.default",
+          "label": "t:sections.all.button.button_label.label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.all.button.button_link.label"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.all.button.button_style.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.all.button.button_style.options__2.label"
+            },
+            {
+              "value": "tertiary",
+              "label": "t:sections.all.button.button_style.options__3.label"
+            }
+          ],
+          "default": "primary",
+          "label": "t:sections.all.button.button_style.label"
+        }
+      ]
+    },
+    {
+      "type": "lookbook_image",
+      "name": "t:sections.lookbook.blocks.lookbook_image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.lookbook.blocks.lookbook_slide.settings.image.label"
+        }
+      ]
+    },
+    {
+      "type": "lookbook_video",
+      "name": "t:sections.lookbook.blocks.lookbook_video.name",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "buttons_color_scheme",
+          "default": "background-1",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.buttons_color_scheme.label"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.video_header.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay_video",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.autoplay_video.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "muted_video",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.muted_video.label",
+          "info": "t:sections.lookbook.blocks.lookbook_video.settings.muted_video.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "loop_video",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.loop_video.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_icon_play",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.show_icon_play.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_icon_sound",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.show_icon_sound.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "description_video",
+          "label": "t:sections.lookbook.blocks.lookbook_video.settings.description_video.label",
+          "info": "t:sections.lookbook.blocks.lookbook_video.settings.description_video.info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.lookbook.name",
+      "blocks": [
+        {
+          "type": "lookbook_video"
+        },
+        {
+          "type": "lookbook_text"
+        },
+        {
+          "type": "lookbook_slide"
+        },
+        {
+          "type": "lookbook_image"
+        },
+        {
+          "type": "lookbook_slide"
+        },
+        {
+          "type": "lookbook_image"
+        },
+        {
+          "type": "lookbook_text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

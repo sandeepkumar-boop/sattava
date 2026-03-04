@@ -1,0 +1,261 @@
+/* Custom Shop By Category Styling */
+
+/* Override button style to match design */
+.categories-list__button.button--simple {
+  background-color: #5d3838;
+  color: #ffffff;
+  border-radius: 0.8rem;
+  padding: 1.4rem 4rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.categories-list__button.button--simple:hover {
+  background-color: #4a2d2d;
+  color: #ffffff;
+}
+
+.categories-list__button.button--simple svg {
+  display: none;
+}
+
+/* Make all 4 categories equal width in a row */
+@media screen and (min-width: 990px) {
+  .categories-list__wrapper--grid.categories-list__wrapper--4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .categories-list__wrapper--grid.categories-list__wrapper--4 .categories-list__item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .categories-list__wrapper--grid.categories-list__wrapper--4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+}
+
+/* Category Card Styling */
+.categories-list__item {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.categories-list__item-inner {
+  position: relative;
+  height: 100%;
+  min-height: 50rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+/* Card backgrounds - light gray/beige tones */
+.categories-list__item:nth-child(1) .categories-list__item-inner {
+  background-color: #e8e8e8;
+}
+
+.categories-list__item:nth-child(2) .categories-list__item-inner {
+  background-color: #e5e3df;
+}
+
+.categories-list__item:nth-child(3) .categories-list__item-inner {
+  background-color: #ebe9e7;
+}
+
+.categories-list__item:nth-child(4) .categories-list__item-inner {
+  background-color: #dfdcda;
+}
+
+/* Image positioning - below text */
+.categories-list__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  order: 2;
+}
+
+.categories-list__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Content at top of card with solid background */
+.categories-list__content-inner {
+  position: relative;
+  padding: 3.2rem;
+  z-index: 2;
+  order: 1;
+  background: transparent;
+}
+
+/* Category title styling */
+.categories-list__title {
+  font-family: var(--font-heading-family);
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  color: #1a1a1a;
+}
+
+/* Category description styling */
+.categories-list__description {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #4a4a4a;
+  font-weight: 400;
+  max-width: 90%;
+}
+
+/* Heading styling */
+.categories-list__heading {
+  font-family: var(--font-heading-family);
+  font-size: clamp(3.2rem, 4vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Content grid adjustment */
+.categories-list__content {
+  display: block;
+  margin-bottom: 0;
+}
+
+/* Header row with title and button */
+.categories-list__content > .categories-list__top,
+.categories-list__content > .categories-list__button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.categories-list__content > .categories-list__top {
+  margin-right: auto;
+}
+
+/* Wrapper for heading and button */
+.categories-list__content::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Create flex container for heading and button only */
+@supports (display: grid) {
+  .categories-list__content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3.2rem;
+  }
+
+  .categories-list__content > .categories-list__top {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .categories-list__content > .categories-list__button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .categories-list__wrapper {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  @supports (display: grid) {
+    .categories-list__content {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.categories-list__top {
+  margin: 0;
+}
+
+/* Remove subheading if present */
+.categories-list__subheading {
+  display: none;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 749px) {
+  .categories-list__item-inner {
+    min-height: 35rem;
+  }
+
+  .categories-list__content-inner {
+    padding: 2.4rem 2rem;
+  }
+
+  .categories-list__title {
+    font-size: 2.2rem;
+  }
+
+  .categories-list__description {
+    font-size: 1.3rem;
+  }
+
+  .categories-list__button.button--simple {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+/* Ensure proper stacking - content on top, image below */
+.categories-list__item-inner > * {
+  position: relative;
+}
+
+.categories-list__item-inner .categories-list__image {
+  position: relative;
+  width: 100%;
+  flex: 1;
+}
+
+.categories-list__item-inner .categories-list__content-inner {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Card link overlay */
+.categories-list__link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.categories-list__item:hover .categories-list__image img {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+
+.categories-list__image img {
+  transition: transform 0.4s ease;
+}
+
+/* Remove old title styles */
+.categories-list__item-title {
+  display: none;
+}
