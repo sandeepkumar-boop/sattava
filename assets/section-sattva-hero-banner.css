@@ -1,0 +1,181 @@
+/* Sattva Hero Banner - BEM, Figma match. Mobile: 1 slide per view slider */
+.sattva-hero-banner {
+  --sattva-hero-primary: #601115;
+  --sattva-hero-overlay: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+/* Mobile: horizontal slider, 1 slide per view */
+.sattva-hero-banner__grid {
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: 360px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.sattva-hero-banner__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.sattva-hero-banner__panel.sattva-hero-banner__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Desktop: 50/50 grid */
+@media screen and (min-width: 990px) {
+  .sattva-hero-banner__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: var(--sattva-hero-min-height, 708px);
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .sattva-hero-banner__panel.sattva-hero-banner__slide {
+    flex: none;
+    min-width: 0;
+    scroll-snap-align: none;
+  }
+}
+
+.sattva-hero-banner__panel {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 360px;
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-hero-banner__panel {
+    min-height: var(--sattva-hero-min-height, 708px);
+  }
+  .sattva-hero-banner {
+    position: relative;
+    top: -83px;
+  }
+}
+
+/* Slider dots - mobile only */
+.sattva-hero-banner__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-hero-banner__dots {
+    display: none;
+  }
+}
+
+.sattva-hero-banner__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sattva-hero-banner__dot.is-active {
+  background: #fff;
+}
+
+.sattva-hero-banner__panel-media {
+  position: absolute;
+  inset: 0;
+}
+
+.sattva-hero-banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sattva-hero-banner__placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--sattva-hero-overlay);
+}
+
+.sattva-hero-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--sattva-hero-overlay);
+  pointer-events: none;
+}
+
+.sattva-hero-banner__content {
+  position: relative;
+  z-index: 2;
+  padding: 92px 24px 49px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-hero-banner__content {
+    padding: 92px 49px;
+  }
+}
+
+.sattva-hero-banner__heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0;
+  white-space: pre-line;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-hero-banner__heading {
+    font-size: 38px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-hero-banner__heading {
+    font-size: 45px;
+  }
+}
+
+.sattva-hero-banner__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 198px;
+  padding: 16px;
+  background: #fff;
+  color: var(--sattva-hero-primary);
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.75;
+  text-decoration: none;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.sattva-hero-banner__button:hover {
+  opacity: 0.92;
+}

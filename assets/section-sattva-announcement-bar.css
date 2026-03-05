@@ -1,0 +1,42 @@
+/* Sattva Announcement Bar - BEM */
+.sattva-announcement-bar {
+  background-color: var(--sattva-announcement-bg, #6B4C2D);
+  color: var(--sattva-announcement-text, #fff);
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 1rem;
+  text-align: center;
+}
+
+.sattva-announcement-bar__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.sattva-announcement-bar__text {
+  margin: 0;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.22;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-announcement-bar {
+    padding: 6px 2rem;
+  }
+  .sattva-announcement-bar__text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-announcement-bar__text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,198 @@
+{{ 'section-sattva-the-sattva-way.css' | asset_url | stylesheet_tag }}
+
+<div class="sattva-the-sattva-way section-{{ section.id }}-padding">
+  <div class="sattva-the-sattva-way__container container">
+    <div class="sattva-the-sattva-way__content">
+      {% if section.settings.heading != blank %}
+        <h2 class="sattva-the-sattva-way__title">{{ section.settings.heading }}</h2>
+      {% endif %}
+      <ul class="sattva-the-sattva-way__list">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'item' %}
+              <li class="sattva-the-sattva-way__list-item" {{ block.shopify_attributes }}>
+                <span class="sattva-the-sattva-way__bullet"></span>
+                <span class="sattva-the-sattva-way__list-text">{{ block.settings.text }}</span>
+              </li>
+          {% endcase %}
+        {% endfor %}
+      </ul>
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="sattva-the-sattva-way__button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+    <div class="sattva-the-sattva-way__media">
+      <div class="sattva-the-sattva-way__slider" data-sattva-way-slider>
+        {% assign image_blocks = section.blocks | where: 'type', 'image_slide' %}
+        {% if image_blocks.size == 0 %}
+          <div class="sattva-the-sattva-way__media-inner">
+            <div class="sattva-the-sattva-way__placeholder"></div>
+          </div>
+        {% endif %}
+        {% for block in image_blocks %}
+          <div class="sattva-the-sattva-way__slide{% if forloop.first %} is-active{% endif %}" data-sattva-way-slide {{ block.shopify_attributes }}>
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="sattva-the-sattva-way__slide-link">
+            {% endif %}
+            <div class="sattva-the-sattva-way__media-inner">
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 800 }}"
+                  alt="{{ block.settings.heading | default: block.settings.button_label | escape }}"
+                  class="sattva-the-sattva-way__image"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                  width="600"
+                  height="400"
+                >
+              {% else %}
+                <div class="sattva-the-sattva-way__placeholder"></div>
+              {% endif %}
+              {% if block.settings.heading != blank or block.settings.button_label != blank %}
+                <div class="sattva-the-sattva-way__media-overlay">
+                  {% if block.settings.heading != blank %}
+                    <h3 class="sattva-the-sattva-way__media-heading">{{ block.settings.heading }}</h3>
+                  {% endif %}
+                  {% if block.settings.button_label != blank and block.settings.link != blank %}
+                    <span class="sattva-the-sattva-way__media-btn">{{ block.settings.button_label }}</span>
+                  {% elsif block.settings.button_label != blank %}
+                    <span class="sattva-the-sattva-way__media-btn">{{ block.settings.button_label }}</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+            {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      {% assign image_blocks = section.blocks | where: 'type', 'image_slide' %}
+      {% if image_blocks.size > 1 %}
+        <button type="button" class="sattva-the-sattva-way__nav sattva-the-sattva-way__nav--prev" aria-label="{{ 'general.pagination.previous' | t }}" data-sattva-way-prev>
+          {% render 'icon-caret-left' %}
+        </button>
+        <button type="button" class="sattva-the-sattva-way__nav sattva-the-sattva-way__nav--next" aria-label="{{ 'general.pagination.next' | t }}" data-sattva-way-next>
+          {% render 'icon-caret-right' %}
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'sattva-the-sattva-way.js' | asset_url }}" defer="defer"></script>
+
+{% style %}
+  {% render 'section-padding' %}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Sattva The Sattva Way",
+  "class": "section-sattva-the-sattva-way",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Sattva Way"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Know More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "s", "label": "Small" },
+        { "value": "m", "label": "Medium" },
+        { "value": "l", "label": "Large" },
+        { "value": "xl", "label": "Extra large" }
+      ],
+      "default": "l",
+      "label": "Padding top"
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "options": [
+        { "value": "no-indent", "label": "None" },
+        { "value": "s", "label": "Small" },
+        { "value": "m", "label": "Medium" },
+        { "value": "l", "label": "Large" },
+        { "value": "xl", "label": "Extra large" }
+      ],
+      "default": "l",
+      "label": "Padding bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "List item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "The Ground Story"
+        }
+      ]
+    },
+    {
+      "type": "image_slide",
+      "name": "Image slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Sustainability by Design"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop All"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sattva The Sattva Way",
+      "blocks": [
+        { "type": "item", "settings": { "text": "The Ground Story" } },
+        { "type": "item", "settings": { "text": "Upcycling the Sattva way" } },
+        { "type": "item", "settings": { "text": "Elements of Craft" } },
+        { "type": "item", "settings": { "text": "Sustainability by Design" } },
+        { "type": "image_slide", "settings": { "heading": "Sustainability by Design", "button_label": "Shop All" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

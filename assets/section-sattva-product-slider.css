@@ -1,0 +1,124 @@
+/* Sattva Product Slider - BEM, Figma match */
+.sattva-product-slider {
+  background: #fff;
+}
+
+.sattva-product-slider__container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-product-slider__container {
+    padding-left: 46px;
+    padding-right: 46px;
+  }
+}
+
+.sattva-product-slider__quote {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.4;
+  color: #000;
+  margin: 0 0 2rem;
+  max-width: 800px;
+  font-style: normal;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-product-slider__quote {
+    font-size: 28px;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-product-slider__quote {
+    font-size: 32px;
+  }
+}
+
+.sattva-product-slider__products-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  margin: 0 -1.5rem;
+  padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-product-slider__products-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.sattva-product-slider__products {
+  display: flex;
+  gap: 10px;
+  scroll-snap-align: start;
+  padding-bottom: 0.5rem;
+}
+
+.sattva-product-slider__item {
+  flex: 0 0 calc(50% - 5px);
+  max-width: calc(50% - 5px);
+  scroll-snap-align: start;
+}
+
+@media screen and (min-width: 550px) {
+  .sattva-product-slider__item {
+    flex: 0 0 calc(33.333% - 7px);
+    max-width: calc(33.333% - 7px);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-product-slider__item {
+    flex: 0 0 calc(25% - 8px);
+    max-width: calc(25% - 8px);
+  }
+}
+
+.sattva-product-slider__item .card-wrapper {
+  height: 100%;
+}
+
+.sattva-product-slider__item .card {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Placeholder when no collection */
+.sattva-product-slider__placeholder-card {
+  background: #f5f0eb;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.sattva-product-slider__placeholder-media {
+  aspect-ratio: 1;
+  background: #e8e4df;
+}
+
+.sattva-product-slider__placeholder-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sattva-product-slider__placeholder-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+}
+
+.sattva-product-slider__placeholder-price {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  color: #282828;
+}

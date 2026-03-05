@@ -1,0 +1,70 @@
+/* Sattva Facts & Figures - BEM, Figma match */
+.sattva-facts-figures {
+  background: #fff;
+}
+
+.sattva-facts-figures__container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-facts-figures__container {
+    padding-left: 46px;
+    padding-right: 46px;
+  }
+}
+
+.sattva-facts-figures__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-facts-figures__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+.sattva-facts-figures__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-facts-figures__item {
+    text-align: left;
+  }
+}
+
+.sattva-facts-figures__number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.22;
+  color: #695F4D;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-facts-figures__number {
+    font-size: 50px;
+  }
+}
+
+.sattva-facts-figures__label {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #000;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-facts-figures__label {
+    font-size: 18px;
+  }
+}
