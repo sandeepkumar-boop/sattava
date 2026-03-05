@@ -269,7 +269,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "color_scheme": "scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83",
-        "image_width": 60,
+        "image_width": 70,
         "subheading": "",
         "heading": "Our Process",
         "heading_size": "h1",
@@ -308,7 +308,7 @@
           "settings": {
             "top": 25,
             "left": 25,
-            "image": "shopify://shop_images/184f97202df3655444ba0b35f0410c046d7547b2.png",
+            "image": "shopify://shop_images/4f6a1351f762a0b62ac02f34a71a25c4e72ad592.png",
             "title": "Kantha Stitching",
             "text": "Short description about the craft technique."
           }
