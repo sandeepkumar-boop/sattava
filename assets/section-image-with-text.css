@@ -69,12 +69,12 @@
   align-items: flex-start;
   flex: 1;
 }
-/* @media screen and (min-width: 990px) {
+@media screen and (min-width: 990px) {
   .image-with-text__content--medium {
     flex: none;
     max-width: 38%;
   }
-} */
+}
 @media screen and (min-width: 990px) {
   .image-with-text__content--small {
     flex: none;
@@ -232,7 +232,7 @@
     margin-bottom: 2.4rem;
   }
 }
-/* .image-with-text__text {
+.image-with-text__text {
   max-width: 43rem;
 }
 @media screen and (min-width: 750px) {
@@ -244,7 +244,7 @@
   .image-with-text__text {
     max-width: 56rem;
   }
-} */
+}
 .image-with-text__text p {
   margin-top: 0;
 }

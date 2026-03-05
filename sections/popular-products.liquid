@@ -7,48 +7,6 @@
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
-<style>
-  .popular-products-slider {
-  width: 100%;
-  overflow: hidden;
-}
-
-.popular-products-slider .swiper-wrapper{
-  display:flex;
-}
-
-.popular-products-slider .swiper-slide{
-  width:auto;
-  height:auto;
-}
-.popular-products-slider {
-  position: relative;
-}
-
-/* common button style */
-.popular-products-slider .swiper-button-prev,
-.popular-products-slider .swiper-button-next {
-  width: 34px;
-  height: 34px;
-  background: #ffffff;
-  border-radius: 50%;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  top: 40%;
-  transform: translateY(-50%);
-  color: #000;
-  padding: 5px;
-}
-
-/* remove default arrow */
-.popular-products-slider .swiper-button-prev::after,
-.popular-products-slider .swiper-button-next::after {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-</style>
-
 {%- if settings.quickview_show or settings.show_on_mobile -%}
   <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="all">
   <link
@@ -95,91 +53,43 @@
         </a>
       {%- endif -%}
 
-      <div class="popular-products-slider swiper">
-  
-  <div class="swiper-wrapper">
-
-    {%- for product in section.settings.product_list -%}
-      {% assign collection_index = forloop.index0 | modulo: 3 | plus: 1 %}
-
-      <div class="swiper-slide">
-        <div class="popular-products__item collection-product-card quickview{%- if settings.quickview_hover -%}--hover{% endif %}">
-          
-          {% render 'product-card',
-            product_card_product: product,
-            media_size: section.settings.image_ratio,
-            media_fit: section.settings.image_fit,
-            show_secondary_image: section.settings.show_secondary_image,
-            show_vendor: section.settings.show_vendor,
-            show_collection: section.settings.show_collection,
-            show_desc: section.settings.show_desc,
-            section_id: section.id,
-            add_id: forloop.index,
-            collection_index: collection_index
-          %}
-
-        </div>
-      </div>
-
-    {%- else -%}
-
-      {%- for i in (1..4) -%}
-        {% assign collection_index = forloop.index0 | modulo: 3 | plus: 1 %}
-
-        <div class="swiper-slide">
-          <div class="popular-products__item_placeholder collection-popular-card collection-popular-card--placeholder">
-            {% render 'product-card-placeholder',
+      <ul class="popular-products__wrapper 
+        popular-products__wrapper--{{ section.settings.products_to_show }} 
+        popular-products--{{ section.settings.columns_mobile }}-mobile
+        list-unstyled">
+        {%- for product in section.settings.product_list -%}
+          {% assign collection_index = forloop.index0 | modulo: 3 | plus: 1 %}
+          <li
+            class="
+              popular-products__item collection-product-card
+              quickview{%- if settings.quickview_hover -%}--hover{% endif %}
+            "
+          >
+            {% render 'product-card',
+              product_card_product: product,
               media_size: section.settings.image_ratio,
+              media_fit: section.settings.image_fit,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_collection: section.settings.show_collection,
+              show_desc: section.settings.show_desc,
+              section_id: section.id,
+              add_id: forloop.index
               collection_index: collection_index
             %}
-          </div>
-        </div>
-
-      {%- endfor -%}
-
-    {%- endfor -%}
-
-  </div>
-
-  <!-- Navigation buttons -->
-  <div class="popular-swiper-prev swiper-button-prev">{% render 'icon-caret-left' %}</div>
-  <div class="popular-swiper-next swiper-button-next">{% render 'icon-caret-right' %}</div>
-
-</div>
+          </li>
+        {%- else -%}
+          {%- for i in (1..4) -%}
+            {% assign collection_index = forloop.index0 | modulo: 3 | plus: 1 %}
+            <li class="popular-products__item_placeholder collection-popular-card collection-popular-card--placeholder">
+              {% render 'product-card-placeholder', media_size: section.settings.image_ratio, collection_index: collection_index %}
+            </li>
+          {%- endfor -%}
+        {%- endfor -%}
+      </ul>
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-  new Swiper(".popular-products-slider", {
-    
-    slidesPerView: 4,
-    spaceBetween: 20,
-    loop: false,
-
-    navigation: {
-      nextEl: ".popular-swiper-next",
-      prevEl: ".popular-swiper-prev"
-    },
-
-    breakpoints: {
-      320: {
-        slidesPerView: 1.2
-      },
-      768: {
-        slidesPerView: 2
-      },
-      1024: {
-        slidesPerView: 4
-      }
-    }
-
-  });
-
-});
-</script>
 
 {% schema %}
 {

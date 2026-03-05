@@ -1359,6 +1359,11 @@ hr {
   }
 }
 
+.link--text {
+  color: rgb(var(--color-foreground));
+  transition: var(--duration-default);
+}
+
 .circle-divider::after {
   content: "•";
   margin: 0 8px 0 8px;
@@ -3171,9 +3176,9 @@ body.body--hidden {
   content: "";
   bottom: 0;
   display: block;
-  height: 0.1px;
+  height: 0.1rem;
   width: 100%;
-  background-color: rgb(229 229 229 / 41%);
+  background-color: rgb(var(--color-border));
   transition: background var(--duration-short);
   pointer-events: none;
   z-index: 2;
@@ -3450,7 +3455,12 @@ body.body--hidden {
   padding-left: 0.8rem;
   padding-right: 0.8rem;
 }
-
+.header__icon .icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  transition: var(--duration-default);
+  color: rgba(var(--color-foreground));
+}
 .header__icon .icon-hamburger {
   width: 1.8rem;
   height: 0.8rem;
@@ -4033,6 +4043,12 @@ details[open] > .header__icon--menu .icon-hamburger {
   padding: 0 1rem;
 }
 
+.header__menu-item {
+  text-decoration: none;
+  color: rgb(var(--color-foreground));
+  transition: color var(--duration-default);
+  overflow: hidden;
+}
 
 .list-menu--inline {
   height: 100%;
@@ -4069,7 +4085,7 @@ details[open] > .header__icon--menu .icon-hamburger {
   align-items: center;
   overflow: visible;
 }
-/* .list-menu--inline .list-menu-item:not(.list-menu--submenu) > .header__menu-item::before {
+.list-menu--inline .list-menu-item:not(.list-menu--submenu) > .header__menu-item::before {
   position: absolute;
   content: "";
   bottom: 0rem;
@@ -4081,7 +4097,7 @@ details[open] > .header__icon--menu .icon-hamburger {
   background-color: transparent;
   transition: background var(--duration-default);
   z-index: 2;
-} */
+}
 .list-menu--inline .list-menu-item:not(.list-menu--submenu) > .header__menu-item:hover::before {
   background-color: rgb(var(--color-foreground));
 }
@@ -4374,7 +4390,7 @@ details[open] > .header__icon--menu .icon-hamburger {
   gap: 0.4rem;
   padding: 0 0.8rem;
   min-height: 4.4rem;
-  color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
 }
 .header__toggle-scheme-item svg {
   width: 2.2rem;
