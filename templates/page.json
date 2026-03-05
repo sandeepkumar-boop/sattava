@@ -1,1 +1,467 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":"no-indent","padding_bottom":"m"}},"image_with_text_BBkrz9":{"type":"image-with-text","name":"t:sections.image-with-text.presets.name","settings":{"color_scheme":"scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83","subheading":"","heading":"Thoughtful gifting,        Made meaningful","heading_size":"h2","text":"<p>Sattva offers considered corporate gifting - from curated hampers to customised pieces designed for your team or clients. Each gift is handcrafted using upcycled textiles and made in small batches by skilled women artisans in Mumbai. Whether you're planning festive hampers, employee appreciation gifts, or bespoke branded items, we work closely with you to create something purposeful and lasting. Get in touch with us, and let's begin.<br\/><\/p>","show_button":true,"button_label":"Talk to us","button_link":"https:\/\/WWW.GOOGLE.COM","button_style":"primary","text_align":"center","text_width":"medium","image":"shopify:\/\/shop_images\/c1ffd284db0edf74260fccccdcc6ff7f5e359f80_1.png","autoplay_video":true,"muted_video":true,"loop_video":true,"show_icon_play":false,"show_icon_sound":false,"autoplay_video_secondary":true,"muted_video_secondary":true,"loop_video_secondary":true,"show_icon_play_secondary":false,"show_icon_sound_secondary":false,"height":"adapt","position":"outside","layout":"text_last","margin_top":"no-indent","margin_bottom":"no-indent","padding_top":"no-indent","padding_bottom":"no-indent"}},"image_banner_EAW6Bh":{"type":"image-banner","disabled":true,"name":"t:sections.image-banner.presets.name","settings":{"full_width":true,"color_scheme":"","image_ratio":"adapt","image_ratio_mobile":"recommended","opacity_overlay":0,"subheading":"","heading":"Upcycling, the Sattva Way","heading_size":"h2","text_information":"<p>Upcycling at Sattva begins with what already exists. We work with reclaimed and surplus textiles, thoughtfully reimagining them into everyday essentials through skilled craftsmanship. You can be a part of this process too - by sharing your own chindis or unused fabric and choosing designs from our collections, we transform them into purposeful pieces made just for you.<br\/><br\/><\/p>","text_align":"left","text_width":"large","additional_text":"","show_view_all":true,"button_label":"Get Started","button_style":"primary","button_link":"","margin_top":"s","margin_bottom":"no-indent"}},"instagram_collage_MkxLF7":{"type":"instagram-collage","name":"t:sections.instagram-collage.presets.name","settings":{"section_type":"slideshow_2","subheading":"","heading":"Upcycling, the Sattva Way","heading_size":"h2","speed_slider_1":500,"speed_slider_2":700,"column_to_show":6,"image_ratio":"square","show_account":false,"name_account":"","link_account":"","show_description":true,"button_label":"Get Started","button_link":"https:\/\/WWW.GOOGLE.COM","button_style":"primary","icon":"none","padding_top":"xl","padding_bottom":"no-indent"}},"multicolumn_hwctAB":{"type":"multicolumn","blocks":{"column_6KwnJk":{"type":"column","settings":{"icon":"return","heading":"Give your left over fabric","text":"<p>We begin with textile remnants -offcuts, surplus fabric, and unused cloth -collected and carefully sorted by material, colour, and quality.<br\/><br\/><\/p>","show_button":false,"button_label":"Discover More","button_link":"","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}},"column_rCckJK":{"type":"column","settings":{"icon":"question_mark_1","heading":"Choose a design","text":"<p>Select from Sattva's collections or work with us to adapt an existing design. Each piece is thoughtfully planned to make the most of the material at hand.<br\/><br\/><\/p>","show_button":false,"button_label":"Discover More","button_link":"","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}},"column_4MTHPi":{"type":"column","settings":{"icon":"moon","heading":"We make it","text":"<p>Skilled women artisans bring the design to life through careful stitching, finishing, and quality checks turning what once remained unused into something purposeful.<br\/><br\/><\/p>","show_button":false,"button_label":"Discover More","button_link":"","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}}},"block_order":["column_6KwnJk","column_rCckJK","column_4MTHPi"],"name":"t:sections.multicolumn.name","settings":{"section_type":"solid","color_scheme":"","multicolumn_to_show":3,"heading":"","heading_size":"h2","image_width":"medium","image_ratio":"portrait","object_fit":"contain","swipe_on_mobile":false,"card_heading_size":"h4","padding_top":"no-indent","padding_bottom":"xl"}},"carousel_UzwbPF":{"type":"carousel","blocks":{"carousel_slide_KxQA6A":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}},"carousel_slide_DFap8V":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}},"carousel_slide_nTizLk":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}},"carousel_slide_CiJj7W":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}},"carousel_slide_KJ4nXj":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}},"carousel_slide_6dFaWQ":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}},"carousel_slide_wRjEeQ":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}},"carousel_slide_zBBwh7":{"type":"carousel_slide","settings":{"show_video":false,"overlay_opacity":0.5,"text_color_scheme":"","heading":"Slide Title Here","link":""}}},"block_order":["carousel_slide_KxQA6A","carousel_slide_DFap8V","carousel_slide_nTizLk","carousel_slide_CiJj7W","carousel_slide_KJ4nXj","carousel_slide_6dFaWQ","carousel_slide_wRjEeQ","carousel_slide_zBBwh7"],"disabled":true,"name":"t:sections.carousel.name","settings":{"subheading":"Write a Short Sentence That Introduces What’s Being Shown","heading":"Highlight Your Best","heading_size":"h2","columns":4,"image_ratio":"portrait","button_show":true,"button_label":"Explore More","button_link":"","padding_top":"m","padding_bottom":"m"}},"multicolumn_iYkFxd":{"type":"multicolumn","blocks":{"column_UF9dTU":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/d5bcbcd86d5902fa868bd9bd6101a3432ceb31e8_1.jpg","icon":"none","heading":"Feature Title Here","text":"<p><em><strong>25 May 2026<\/strong><\/em><br\/>This refreshing blend of peppermint leaves is invigorating and invigorating. It's perfect for settling an upset stomach and can help with headaches.<br\/><br\/><\/p>","show_button":true,"button_label":"Know More","button_link":"https:\/\/WWW.GOOGLE.COM","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}},"column_rkkprP":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/c14a5965d552a1ebac452edc2fe8eb51e19b13ef.png","icon":"none","heading":"Feature Title Here","text":"<p><em><strong>3 March 2026<\/strong><\/em><br\/>This refreshing blend of peppermint leaves is invigorating and invigorating. It's perfect for settling an upset stomach and can help with headaches.<br\/><br\/><\/p>","show_button":true,"button_label":"Know More","button_link":"https:\/\/WWW.GOOGLE.COM","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}},"column_i8WcFA":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/b7fdcdb5162ae7eb07f39cae979633ecb6eec5a7.jpg","icon":"none","heading":"Feature Title Here","text":"<p><em><strong>6 December 2026<\/strong><\/em><br\/>This refreshing blend of peppermint leaves is invigorating and invigorating. It's perfect for settling an upset stomach and can help with headaches.<br\/><br\/><\/p>","show_button":true,"button_label":"Know More","button_link":"https:\/\/WWW.GOOGLE.COM","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}}},"block_order":["column_UF9dTU","column_rkkprP","column_i8WcFA"],"name":"t:sections.multicolumn.name","settings":{"section_type":"full_image","color_scheme":"scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83","multicolumn_to_show":3,"heading":"Collaborations and Training Events","heading_size":"h2","image_width":"medium","image_ratio":"square","object_fit":"cover","swipe_on_mobile":false,"card_heading_size":"h4","padding_top":"l","padding_bottom":"l"}},"image_banner_6f3ewE":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"full_width":true,"color_scheme":"background-4","image":"shopify:\/\/shop_images\/83cd29334a30c7aec2891f759e193b87493d84aa_1.png","image_ratio":"16\/9","image_ratio_mobile":"recommended","opacity_overlay":0.4,"subheading":"","heading":"Craft Cluster","heading_size":"h2","text_information":"<p>At Sattva, we work with women artisans organised into small clusters, each with its own strengths, skills, and specialisations.<br\/>Some clusters focus on specific techniques -such as patchwork, embroidery, or textile preparation - while others handle full product assembly and finishing. In many cases, clusters collaborate across stages of a product, coming together to create a single collection. Larger, more established clusters also work closely with Sattva to develop their own collections from start to finish. This distributed way of making allows us to honour skill, ensure quality, and create meaningful collaboration across communities. You can explore products by the clusters that shaped them within our collections.<br\/><br\/><\/p>","text_align":"bottom-left","text_width":"full","additional_text":"","show_view_all":false,"button_label":"Shop now","button_style":"secondary","button_link":"https:\/\/WWW.GOOGLE.COM","margin_top":"no-indent","margin_bottom":"s"}},"multicolumn_jE7FR9":{"type":"multicolumn","blocks":{"column_FRK6CC":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/4f6a1351f762a0b62ac02f34a71a25c4e72ad592.png","icon":"none","heading":"Products By Andheri Cluster","text":"","show_button":false,"button_label":"Know More","button_link":"","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}},"column_VW8eem":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/063b4f59efd993c0e89b4fde1fde2df1ce8f60f4.png","icon":"none","heading":"Products By Anand Nagar Cluster","text":"","show_button":false,"button_label":"Know More","button_link":"","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}},"column_NLDWPM":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/b58e00b4b64cd4133161210f878762540b9cf9e8.png","icon":"none","heading":"Products By Jail Cluster","text":"","show_button":false,"button_label":"Know More","button_link":"","button_style":"primary","full_link":false,"additional_text_1":"","additional_text_2":""}}},"block_order":["column_FRK6CC","column_VW8eem","column_NLDWPM"],"name":"t:sections.multicolumn.name","settings":{"section_type":"full_image","color_scheme":"background-1","multicolumn_to_show":3,"heading":"Products Made By our Clusters","heading_size":"h2","image_width":"medium","image_ratio":"portrait","object_fit":"cover","swipe_on_mobile":false,"card_heading_size":"h3","padding_top":"l","padding_bottom":"xl"}}},"order":["image_with_text_BBkrz9","image_banner_EAW6Bh","instagram_collage_MkxLF7","multicolumn_hwctAB","carousel_UzwbPF","multicolumn_iYkFxd","image_banner_6f3ewE","multicolumn_jE7FR9","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_BBkrz9": {
+      "type": "image-with-text",
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "color_scheme": "scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83",
+        "image_width": 50,
+        "subheading": "",
+        "heading": "Thoughtful gifting,        Made meaningful",
+        "heading_size": "h2",
+        "text": "<p>Sattva offers considered corporate gifting - from curated hampers to customised pieces designed for your team or clients. Each gift is handcrafted using upcycled textiles and made in small batches by skilled women artisans in Mumbai. Whether you're planning festive hampers, employee appreciation gifts, or bespoke branded items, we work closely with you to create something purposeful and lasting. Get in touch with us, and let's begin.<br/></p>",
+        "show_button": true,
+        "button_label": "Talk to us",
+        "button_link": "https://WWW.GOOGLE.COM",
+        "button_style": "primary",
+        "text_align": "center",
+        "text_width": "medium",
+        "image": "shopify://shop_images/c1ffd284db0edf74260fccccdcc6ff7f5e359f80_1.png",
+        "autoplay_video": true,
+        "muted_video": true,
+        "loop_video": true,
+        "show_icon_play": false,
+        "show_icon_sound": false,
+        "autoplay_video_secondary": true,
+        "muted_video_secondary": true,
+        "loop_video_secondary": true,
+        "show_icon_play_secondary": false,
+        "show_icon_sound_secondary": false,
+        "height": "adapt",
+        "position": "outside",
+        "layout": "text_last",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "no-indent",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "image_banner_EAW6Bh": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "full_width": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_ratio_mobile": "recommended",
+        "opacity_overlay": 0,
+        "subheading": "",
+        "heading": "Upcycling, the Sattva Way",
+        "heading_size": "h2",
+        "text_information": "<p>Upcycling at Sattva begins with what already exists. We work with reclaimed and surplus textiles, thoughtfully reimagining them into everyday essentials through skilled craftsmanship. You can be a part of this process too - by sharing your own chindis or unused fabric and choosing designs from our collections, we transform them into purposeful pieces made just for you.<br/><br/></p>",
+        "text_align": "left",
+        "text_width": "large",
+        "additional_text": "",
+        "show_view_all": true,
+        "button_label": "Get Started",
+        "button_style": "primary",
+        "button_link": "",
+        "margin_top": "s",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "instagram_collage_MkxLF7": {
+      "type": "instagram-collage",
+      "name": "t:sections.instagram-collage.presets.name",
+      "settings": {
+        "section_type": "slideshow_2",
+        "subheading": "",
+        "heading": "Upcycling, the Sattva Way",
+        "heading_size": "h2",
+        "speed_slider_1": 500,
+        "speed_slider_2": 700,
+        "column_to_show": 6,
+        "image_ratio": "square",
+        "show_account": false,
+        "name_account": "",
+        "link_account": "",
+        "show_description": true,
+        "button_label": "Get Started",
+        "button_link": "https://WWW.GOOGLE.COM",
+        "button_style": "primary",
+        "icon": "none",
+        "padding_top": "xl",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "multicolumn_hwctAB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6KwnJk": {
+          "type": "column",
+          "settings": {
+            "icon": "return",
+            "heading": "Give your left over fabric",
+            "text": "<p>We begin with textile remnants -offcuts, surplus fabric, and unused cloth -collected and carefully sorted by material, colour, and quality.<br/><br/></p>",
+            "show_button": false,
+            "button_label": "Discover More",
+            "button_link": "",
+            "button_style": "primary",
+            "full_link": false,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        },
+        "column_rCckJK": {
+          "type": "column",
+          "settings": {
+            "icon": "question_mark_1",
+            "heading": "Choose a design",
+            "text": "<p>Select from Sattva's collections or work with us to adapt an existing design. Each piece is thoughtfully planned to make the most of the material at hand.<br/><br/></p>",
+            "show_button": false,
+            "button_label": "Discover More",
+            "button_link": "",
+            "button_style": "primary",
+            "full_link": false,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        },
+        "column_4MTHPi": {
+          "type": "column",
+          "settings": {
+            "icon": "moon",
+            "heading": "We make it",
+            "text": "<p>Skilled women artisans bring the design to life through careful stitching, finishing, and quality checks turning what once remained unused into something purposeful.<br/><br/></p>",
+            "show_button": false,
+            "button_label": "Discover More",
+            "button_link": "",
+            "button_style": "primary",
+            "full_link": false,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_6KwnJk",
+        "column_rCckJK",
+        "column_4MTHPi"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "section_type": "solid",
+        "color_scheme": "",
+        "multicolumn_to_show": 3,
+        "heading": "",
+        "heading_size": "h2",
+        "image_width": "medium",
+        "image_ratio": "portrait",
+        "object_fit": "contain",
+        "swipe_on_mobile": false,
+        "card_heading_size": "h4",
+        "padding_top": "no-indent",
+        "padding_bottom": "xl"
+      }
+    },
+    "carousel_UzwbPF": {
+      "type": "carousel",
+      "blocks": {
+        "carousel_slide_KxQA6A": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        },
+        "carousel_slide_DFap8V": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        },
+        "carousel_slide_nTizLk": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        },
+        "carousel_slide_CiJj7W": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        },
+        "carousel_slide_KJ4nXj": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        },
+        "carousel_slide_6dFaWQ": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        },
+        "carousel_slide_wRjEeQ": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        },
+        "carousel_slide_zBBwh7": {
+          "type": "carousel_slide",
+          "settings": {
+            "show_video": false,
+            "overlay_opacity": 0.5,
+            "text_color_scheme": "",
+            "heading": "Slide Title Here",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "carousel_slide_KxQA6A",
+        "carousel_slide_DFap8V",
+        "carousel_slide_nTizLk",
+        "carousel_slide_CiJj7W",
+        "carousel_slide_KJ4nXj",
+        "carousel_slide_6dFaWQ",
+        "carousel_slide_wRjEeQ",
+        "carousel_slide_zBBwh7"
+      ],
+      "disabled": true,
+      "name": "t:sections.carousel.name",
+      "settings": {
+        "subheading": "Write a Short Sentence That Introduces What’s Being Shown",
+        "heading": "Highlight Your Best",
+        "heading_size": "h2",
+        "columns": 4,
+        "image_ratio": "portrait",
+        "button_show": true,
+        "button_label": "Explore More",
+        "button_link": "",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "multicolumn_iYkFxd": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_UF9dTU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/d5bcbcd86d5902fa868bd9bd6101a3432ceb31e8_1.jpg",
+            "icon": "none",
+            "heading": "Feature Title Here",
+            "text": "<p><em><strong>25 May 2026</strong></em><br/>This refreshing blend of peppermint leaves is invigorating and invigorating. It's perfect for settling an upset stomach and can help with headaches.<br/><br/></p>",
+            "show_button": true,
+            "button_label": "Know More",
+            "button_link": "https://WWW.GOOGLE.COM",
+            "button_style": "primary",
+            "full_link": false,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        },
+        "column_rkkprP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/c14a5965d552a1ebac452edc2fe8eb51e19b13ef.png",
+            "icon": "none",
+            "heading": "Feature Title Here",
+            "text": "<p><em><strong>3 March 2026</strong></em><br/>This refreshing blend of peppermint leaves is invigorating and invigorating. It's perfect for settling an upset stomach and can help with headaches.<br/><br/></p>",
+            "show_button": true,
+            "button_label": "Know More",
+            "button_link": "https://WWW.GOOGLE.COM",
+            "button_style": "primary",
+            "full_link": false,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        },
+        "column_i8WcFA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/b7fdcdb5162ae7eb07f39cae979633ecb6eec5a7.jpg",
+            "icon": "none",
+            "heading": "Feature Title Here",
+            "text": "<p><em><strong>6 December 2026</strong></em><br/>This refreshing blend of peppermint leaves is invigorating and invigorating. It's perfect for settling an upset stomach and can help with headaches.<br/><br/></p>",
+            "show_button": true,
+            "button_label": "Know More",
+            "button_link": "https://WWW.GOOGLE.COM",
+            "button_style": "primary",
+            "full_link": false,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_UF9dTU",
+        "column_rkkprP",
+        "column_i8WcFA"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "section_type": "full_image",
+        "color_scheme": "scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83",
+        "multicolumn_to_show": 3,
+        "heading": "Collaborations and Training Events",
+        "heading_size": "h2",
+        "image_width": "medium",
+        "image_ratio": "square",
+        "object_fit": "cover",
+        "swipe_on_mobile": false,
+        "card_heading_size": "h4",
+        "padding_top": "l",
+        "padding_bottom": "l"
+      }
+    },
+    "image_banner_6f3ewE": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "full_width": true,
+        "color_scheme": "background-4",
+        "image": "shopify://shop_images/83cd29334a30c7aec2891f759e193b87493d84aa_1.png",
+        "image_ratio": "16/9",
+        "image_ratio_mobile": "recommended",
+        "opacity_overlay": 0.4,
+        "subheading": "",
+        "heading": "Craft Cluster",
+        "heading_size": "h2",
+        "text_information": "<p>At Sattva, we work with women artisans organised into small clusters, each with its own strengths, skills, and specialisations.<br/>Some clusters focus on specific techniques -such as patchwork, embroidery, or textile preparation - while others handle full product assembly and finishing. In many cases, clusters collaborate across stages of a product, coming together to create a single collection. Larger, more established clusters also work closely with Sattva to develop their own collections from start to finish. This distributed way of making allows us to honour skill, ensure quality, and create meaningful collaboration across communities. You can explore products by the clusters that shaped them within our collections.<br/><br/></p>",
+        "text_align": "bottom-left",
+        "text_width": "full",
+        "additional_text": "",
+        "show_view_all": false,
+        "button_label": "Shop now",
+        "button_style": "secondary",
+        "button_link": "https://WWW.GOOGLE.COM",
+        "margin_top": "no-indent",
+        "margin_bottom": "s"
+      }
+    },
+    "multicolumn_jE7FR9": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_FRK6CC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/4f6a1351f762a0b62ac02f34a71a25c4e72ad592.png",
+            "icon": "none",
+            "heading": "Products By Andheri Cluster",
+            "text": "",
+            "show_button": false,
+            "button_label": "Know More",
+            "button_link": "shopify://products/signature-gift-set",
+            "button_style": "primary",
+            "full_link": true,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        },
+        "column_VW8eem": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/063b4f59efd993c0e89b4fde1fde2df1ce8f60f4.png",
+            "icon": "none",
+            "heading": "Products By Anand Nagar Cluster",
+            "text": "",
+            "show_button": false,
+            "button_label": "Know More",
+            "button_link": "shopify://products/runners",
+            "button_style": "primary",
+            "full_link": true,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        },
+        "column_NLDWPM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/b58e00b4b64cd4133161210f878762540b9cf9e8.png",
+            "icon": "none",
+            "heading": "Products By Jail Cluster",
+            "text": "",
+            "show_button": false,
+            "button_label": "Know More",
+            "button_link": "shopify://products/signature-gift-set",
+            "button_style": "primary",
+            "full_link": true,
+            "additional_text_1": "",
+            "additional_text_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_FRK6CC",
+        "column_VW8eem",
+        "column_NLDWPM"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "section_type": "full_image",
+        "color_scheme": "background-1",
+        "multicolumn_to_show": 3,
+        "heading": "Products Made By our Clusters",
+        "heading_size": "h2",
+        "image_width": "medium",
+        "image_ratio": "portrait",
+        "object_fit": "cover",
+        "swipe_on_mobile": false,
+        "card_heading_size": "h3",
+        "padding_top": "l",
+        "padding_bottom": "xl"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_BBkrz9",
+    "image_banner_EAW6Bh",
+    "instagram_collage_MkxLF7",
+    "multicolumn_hwctAB",
+    "carousel_UzwbPF",
+    "multicolumn_iYkFxd",
+    "image_banner_6f3ewE",
+    "multicolumn_jE7FR9",
+    "main"
+  ]
+}

@@ -542,7 +542,7 @@
             "button_label": "View Category",
             "button_link": "https://www.google.com",
             "button_style": "primary",
-            "full_link": false,
+            "full_link": true,
             "additional_text_1": "",
             "additional_text_2": ""
           }
@@ -558,7 +558,7 @@
             "button_label": "View Category",
             "button_link": "https://www.googlecom",
             "button_style": "primary",
-            "full_link": false,
+            "full_link": true,
             "additional_text_1": "",
             "additional_text_2": ""
           }
@@ -574,7 +574,7 @@
             "button_label": "View Category",
             "button_link": "https://www.google.com",
             "button_style": "primary",
-            "full_link": false,
+            "full_link": true,
             "additional_text_1": "",
             "additional_text_2": ""
           }

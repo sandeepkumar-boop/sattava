@@ -101,50 +101,6 @@
         "padding_bottom": "l"
       }
     },
-    "sattva_facts_figures_bnzHLj": {
-      "type": "sattva-facts-figures",
-      "blocks": {
-        "stat_g3MizL": {
-          "type": "stat",
-          "settings": {
-            "number": "+3200",
-            "label": "Products Handcrafted"
-          }
-        },
-        "stat_cKF3rU": {
-          "type": "stat",
-          "settings": {
-            "number": "+450",
-            "label": "Artisans Trained"
-          }
-        },
-        "stat_6jdEWU": {
-          "type": "stat",
-          "settings": {
-            "number": "2.8 T",
-            "label": "Textiles Upcycled"
-          }
-        },
-        "stat_fXjLgL": {
-          "type": "stat",
-          "settings": {
-            "number": "13",
-            "label": "Neighborhood Reached"
-          }
-        }
-      },
-      "block_order": [
-        "stat_g3MizL",
-        "stat_cKF3rU",
-        "stat_6jdEWU",
-        "stat_fXjLgL"
-      ],
-      "name": "Sattva Facts & Figures",
-      "settings": {
-        "padding_top": "l",
-        "padding_bottom": "l"
-      }
-    },
     "sattva_the_sattva_way_nziiE3": {
       "type": "sattva-the-sattva-way",
       "blocks": {
@@ -214,6 +170,50 @@
         "heading": "The Sattva Way",
         "button_label": "Know More",
         "button_link": "shopify://products/everyday-wallet",
+        "padding_top": "l",
+        "padding_bottom": "l"
+      }
+    },
+    "sattva_facts_figures_bnzHLj": {
+      "type": "sattva-facts-figures",
+      "blocks": {
+        "stat_g3MizL": {
+          "type": "stat",
+          "settings": {
+            "number": "+3200",
+            "label": "Products Handcrafted"
+          }
+        },
+        "stat_cKF3rU": {
+          "type": "stat",
+          "settings": {
+            "number": "+450",
+            "label": "Artisans Trained"
+          }
+        },
+        "stat_6jdEWU": {
+          "type": "stat",
+          "settings": {
+            "number": "2.8 T",
+            "label": "Textiles Upcycled"
+          }
+        },
+        "stat_fXjLgL": {
+          "type": "stat",
+          "settings": {
+            "number": "13",
+            "label": "Neighborhood Reached"
+          }
+        }
+      },
+      "block_order": [
+        "stat_g3MizL",
+        "stat_cKF3rU",
+        "stat_6jdEWU",
+        "stat_fXjLgL"
+      ],
+      "name": "Sattva Facts & Figures",
+      "settings": {
         "padding_top": "l",
         "padding_bottom": "l"
       }
@@ -503,6 +503,7 @@
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83",
+        "image_width": 50,
         "subheading": "",
         "heading": "The Sattva Way",
         "heading_size": "h1",
@@ -890,6 +891,29 @@
         "padding_bottom": "no-indent"
       }
     },
+    "product_popular_slider_yxgnDG": {
+      "type": "product-popular-slider",
+      "disabled": true,
+      "name": "Popular Products Slider",
+      "settings": {
+        "heading": "Popular Products",
+        "product_list": [
+          "runners",
+          "pouches",
+          "laptop-sleeves",
+          "jewelry-boxes",
+          "everyday-wallet",
+          "signature-gift-set",
+          "textured-cushion-cover"
+        ],
+        "image_ratio": "portrait",
+        "image_fit": "cover",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false
+      }
+    },
     "popular_products_Qnd6p3": {
       "type": "popular-products",
       "name": "t:sections.popular-products.presets.name",
@@ -901,7 +925,8 @@
           "runners",
           "laptop-sleeves",
           "jewelry-boxes",
-          "pouches"
+          "pouches",
+          "everyday-wallet"
         ],
         "products_to_show": 4,
         "image_ratio": "square",
@@ -924,6 +949,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "color_scheme": "scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83",
+        "image_width": 50,
         "subheading": "",
         "heading": "Thoughtful gifts with story stitched in",
         "heading_size": "h1",
@@ -969,6 +995,7 @@
     "multicolumn_gftQ6x",
     "gallery-with-text",
     "rich_text_UjcCjM",
+    "product_popular_slider_yxgnDG",
     "popular_products_Qnd6p3",
     "image_with_text_atzbH8"
   ]
