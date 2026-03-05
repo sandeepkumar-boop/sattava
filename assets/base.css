@@ -1359,11 +1359,6 @@ hr {
   }
 }
 
-.link--text {
-  color: rgb(var(--color-background));
-  transition: var(--duration-default);
-}
-
 .circle-divider::after {
   content: "•";
   margin: 0 8px 0 8px;
@@ -3455,12 +3450,7 @@ body.body--hidden {
   padding-left: 0.8rem;
   padding-right: 0.8rem;
 }
-.header__icon .icon {
-  width: 1.4rem;
-  height: 1.4rem;
-  transition: var(--duration-default);
-  color: rgba(var(--color-background));
-}
+
 .header__icon .icon-hamburger {
   width: 1.8rem;
   height: 0.8rem;
@@ -4043,12 +4033,6 @@ details[open] > .header__icon--menu .icon-hamburger {
   padding: 0 1rem;
 }
 
-.header__menu-item {
-  text-decoration: none;
-  color: rgb(var(--color-background));
-  transition: color var(--duration-default);
-  overflow: hidden;
-}
 
 .list-menu--inline {
   height: 100%;

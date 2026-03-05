@@ -413,6 +413,64 @@
         }, 100);
       });
     </script>
+    <style>
+      {% if template.name == 'index' %}
+        .header__menu-item {
+          text-decoration: none;
+          color: rgb(var(--color-background));
+          transition: color var(--duration-default);
+          overflow: hidden;
+        }
+        .link--text {
+          color: rgb(var(--color-background));
+          transition: var(--duration-default);
+        }
+        .header__toggle-scheme-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          gap: 0.4rem;
+          padding: 0 0.8rem;
+          min-height: 4.4rem;
+          color: rgb(var(--color-background));
+        }.header__icon .icon {
+          width: 20px;
+          height: 20px;
+          transition: var(--duration-default);
+          color: rgba(var(--color-background));
+        }
+
+        {%  else %}
+
+        .header__icon .icon {
+          width: 20px;
+          height: 20px;
+          transition: var(--duration-default);
+          color: rgba(var(--color-foreground));
+        }
+        .header__menu-item {
+          text-decoration: none;
+          color: rgb(var(--color-foreground));
+          transition: color var(--duration-default);
+          overflow: hidden;
+        }
+        .link--text {
+          color: rgb(var(--color-foreground));
+          transition: var(--duration-default);
+        }
+        .header__toggle-scheme-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          gap: 0.4rem;
+          padding: 0 0.8rem;
+          min-height: 4.4rem;
+          color: rgb(var(--color-foreground));
+        }
+      {% endif %}
+    </style>
   </head>
 
   <body class="template-{{ template.name }} template-{{ template | replace: '.', '-' }}">

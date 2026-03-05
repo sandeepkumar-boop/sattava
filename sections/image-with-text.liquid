@@ -7,7 +7,36 @@
 	{% render 'section-margin' %}
 {%- endstyle -%}
 
-<div class='image-with-text section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} background'>
+{%- style -%}
+  {% render 'section-padding' %}
+  {% render 'section-margin' %}
+
+  .section-{{ section.id }} .image-with-text__grid{
+    display:flex;
+    gap:40px;
+  }
+
+  .section-{{ section.id }} .image-with-text__left{
+    max-width: {{ section.settings.image_width }}%;
+  }
+
+  .section-{{ section.id }} .image-with-text__content{
+    max-width: calc(100% - {{ section.settings.image_width }}%);
+  }
+
+  @media(max-width:768px){
+    .section-{{ section.id }} .image-with-text__grid{
+      flex-direction:column;
+    }
+
+    .section-{{ section.id }} .image-with-text__left,
+    .section-{{ section.id }} .image-with-text__content{
+      width:100%;
+    }
+  }
+{%- endstyle -%}
+
+<div class='section-{{ section.id }}  image-with-text section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} background'>
 	<div class='container'>
 		<div class='image-with-text__container'>
 			<div class='image-with-text__grid{% if section.settings.layout == 'text_last' %} image-with-text__grid--reverse{% endif %} image-with-text__grid--{{ section.settings.text_align }}'>
@@ -192,6 +221,16 @@
 			"id": "color_scheme",
 			"default": "background-1",
 			"label": "t:sections.all.color_scheme.label"
+		},
+		{
+		"type": "range",
+		"id": "image_width",
+		"min": 10,
+		"max": 90,
+		"step": 5,
+		"unit": "%",
+		"label": "Image Width",
+		"default": 50
 		},
 		{
 			"type": "text",
