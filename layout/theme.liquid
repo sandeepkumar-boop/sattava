@@ -415,7 +415,8 @@
     </script>
     <style>
       {% if template.name == 'index' %}
-        .header__menu-item {
+        @media screen and (min-width: 768px) {
+          .header__menu-item {
           text-decoration: none;
           color: rgb(var(--color-background));
           transition: color var(--duration-default);
@@ -440,6 +441,8 @@
           transition: var(--duration-default);
           color: rgba(var(--color-background));
         }
+        }
+        
 
         {%  else %}
 
