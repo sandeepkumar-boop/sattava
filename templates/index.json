@@ -101,50 +101,6 @@
         "padding_bottom": "l"
       }
     },
-    "sattva_facts_figures_bnzHLj": {
-      "type": "sattva-facts-figures",
-      "blocks": {
-        "stat_g3MizL": {
-          "type": "stat",
-          "settings": {
-            "number": "+3200",
-            "label": "Products Handcrafted"
-          }
-        },
-        "stat_cKF3rU": {
-          "type": "stat",
-          "settings": {
-            "number": "+450",
-            "label": "Artisans Trained"
-          }
-        },
-        "stat_6jdEWU": {
-          "type": "stat",
-          "settings": {
-            "number": "2.8 T",
-            "label": "Textiles Upcycled"
-          }
-        },
-        "stat_fXjLgL": {
-          "type": "stat",
-          "settings": {
-            "number": "13",
-            "label": "Neighborhood Reached"
-          }
-        }
-      },
-      "block_order": [
-        "stat_g3MizL",
-        "stat_cKF3rU",
-        "stat_6jdEWU",
-        "stat_fXjLgL"
-      ],
-      "name": "Sattva Facts & Figures",
-      "settings": {
-        "padding_top": "l",
-        "padding_bottom": "l"
-      }
-    },
     "sattva_the_sattva_way_nziiE3": {
       "type": "sattva-the-sattva-way",
       "blocks": {
@@ -214,6 +170,50 @@
         "heading": "The Sattva Way",
         "button_label": "Know More",
         "button_link": "shopify://products/everyday-wallet",
+        "padding_top": "l",
+        "padding_bottom": "l"
+      }
+    },
+    "sattva_facts_figures_bnzHLj": {
+      "type": "sattva-facts-figures",
+      "blocks": {
+        "stat_g3MizL": {
+          "type": "stat",
+          "settings": {
+            "number": "+3200",
+            "label": "Products Handcrafted"
+          }
+        },
+        "stat_cKF3rU": {
+          "type": "stat",
+          "settings": {
+            "number": "+450",
+            "label": "Artisans Trained"
+          }
+        },
+        "stat_6jdEWU": {
+          "type": "stat",
+          "settings": {
+            "number": "2.8 T",
+            "label": "Textiles Upcycled"
+          }
+        },
+        "stat_fXjLgL": {
+          "type": "stat",
+          "settings": {
+            "number": "13",
+            "label": "Neighborhood Reached"
+          }
+        }
+      },
+      "block_order": [
+        "stat_g3MizL",
+        "stat_cKF3rU",
+        "stat_6jdEWU",
+        "stat_fXjLgL"
+      ],
+      "name": "Sattva Facts & Figures",
+      "settings": {
         "padding_top": "l",
         "padding_bottom": "l"
       }
@@ -503,6 +503,7 @@
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83",
+        "image_width": 50,
         "subheading": "",
         "heading": "The Sattva Way",
         "heading_size": "h1",
@@ -924,6 +925,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "color_scheme": "scheme-0e65bf93-c3c9-4e32-a45d-d6c35586da83",
+        "image_width": 50,
         "subheading": "",
         "heading": "Thoughtful gifts with story stitched in",
         "heading_size": "h1",
