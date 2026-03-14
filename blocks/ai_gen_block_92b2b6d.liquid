@@ -1,0 +1,325 @@
+{% doc %}
+  @prompt
+    currency toggle button
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-currency-toggle-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-currency-toggle__wrapper-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: {{ block.settings.gap }}px;
+    background-color: {{ block.settings.background_color }};
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding }}px;
+  }
+
+  .ai-currency-toggle__button-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    padding: {{ block.settings.button_padding }}px {{ block.settings.button_padding | times: 1.5 }}px;
+    font-family: {{ block.settings.button_font.family }}, {{ block.settings.button_font.fallback_families }};
+    font-weight: {{ block.settings.button_font.weight }};
+    font-size: {{ block.settings.font_size }}px;
+    color: {{ block.settings.inactive_color }};
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    position: relative;
+  }
+
+  .ai-currency-toggle__button-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.hover_color }};
+    background-color: {{ block.settings.button_hover_bg }};
+  }
+
+  .ai-currency-toggle__button-{{ ai_gen_id }}.active {
+    color: {{ block.settings.active_color }};
+    background-color: {{ block.settings.active_bg_color }};
+  }
+
+  .ai-currency-toggle__divider-{{ ai_gen_id }} {
+    width: 1px;
+    height: {{ block.settings.divider_height }}px;
+    background-color: {{ block.settings.divider_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-currency-toggle__wrapper-{{ ai_gen_id }} {
+      gap: {{ block.settings.gap | times: 0.8 }}px;
+      padding: {{ block.settings.padding | times: 0.8 }}px;
+    }
+
+    .ai-currency-toggle__button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+      padding: {{ block.settings.button_padding | times: 0.8 }}px {{ block.settings.button_padding | times: 1.2 }}px;
+    }
+  }
+{% endstyle %}
+
+<currency-toggle-{{ ai_gen_id }} class="ai-currency-toggle-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-currency-toggle__wrapper-{{ ai_gen_id }}">
+    {% assign currencies = block.settings.currencies | split: ',' %}
+    {% for currency in currencies %}
+      {% assign trimmed_currency = currency | strip %}
+      {% if trimmed_currency != blank %}
+        {% if forloop.first == false %}
+          <div class="ai-currency-toggle__divider-{{ ai_gen_id }}"></div>
+        {% endif %}
+        <button
+          class="ai-currency-toggle__button-{{ ai_gen_id }} {% if forloop.first %}active{% endif %}"
+          data-currency="{{ trimmed_currency }}"
+          aria-label="Switch to {{ trimmed_currency }}"
+        >
+          {{ trimmed_currency }}
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+</currency-toggle-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CurrencyToggle{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.buttons = this.querySelectorAll('.ai-currency-toggle__button-{{ ai_gen_id }}');
+        this.currentCurrency = this.getCurrentCurrency();
+      }
+
+      connectedCallback() {
+        this.setupEventListeners();
+        this.updateActiveButton();
+      }
+
+      setupEventListeners() {
+        this.buttons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            const currency = e.currentTarget.getAttribute('data-currency');
+            this.switchCurrency(currency);
+          });
+        });
+      }
+
+      getCurrentCurrency() {
+        const storedCurrency = localStorage.getItem('selectedCurrency');
+        if (storedCurrency) {
+          return storedCurrency;
+        }
+        return this.buttons[0]?.getAttribute('data-currency') || 'USD';
+      }
+
+      switchCurrency(currency) {
+        this.currentCurrency = currency;
+        localStorage.setItem('selectedCurrency', currency);
+        this.updateActiveButton();
+        this.dispatchCurrencyChangeEvent(currency);
+      }
+
+      updateActiveButton() {
+        this.buttons.forEach((button) => {
+          const buttonCurrency = button.getAttribute('data-currency');
+          if (buttonCurrency === this.currentCurrency) {
+            button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
+          } else {
+            button.classList.remove('active');
+            button.setAttribute('aria-pressed', 'false');
+          }
+        });
+      }
+
+      dispatchCurrencyChangeEvent(currency) {
+        const event = new CustomEvent('currencyChanged', {
+          detail: { currency: currency },
+          bubbles: true,
+          composed: true
+        });
+        this.dispatchEvent(event);
+      }
+    }
+
+    customElements.define('currency-toggle-{{ ai_gen_id }}', CurrencyToggle{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Currency toggle",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Currencies"
+    },
+    {
+      "type": "text",
+      "id": "currencies",
+      "label": "Currency codes",
+      "default": "USD, EUR, GBP, INR",
+      "info": "Enter currency codes separated by commas (e.g., USD, EUR, GBP)"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between buttons",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Container padding",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "label": "Button padding",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Container border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Font",
+      "default": "instrument_sans_n5"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "inactive_color",
+      "label": "Inactive text",
+      "default": "#696969"
+    },
+    {
+      "type": "color",
+      "id": "hover_color",
+      "label": "Hover text",
+      "default": "#282828"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Hover background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "active_color",
+      "label": "Active text",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "active_bg_color",
+      "label": "Active background",
+      "default": "#601115"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "range",
+      "id": "divider_height",
+      "label": "Divider height",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Currency toggle"
+    }
+  ]
+}
+{% endschema %}

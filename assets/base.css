@@ -6866,3 +6866,24 @@ html[dir=rtl] {
     display: none !important;
   }
 }
+
+.cvc-dropdown-expand__active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: 24rem !important;
+  min-width: unset !important;
+  right: 14rem !important;
+}
+
+.cvc-switcher-btn--embedded {
+    display: inline-flex;
+    vertical-align: middle;
+    width: 100% !important;
+    position: absolute !important;
+    top: 91px !important;
+    width: 100% !important;
+}
+
+.header__icons {
+  position: relative;
+}

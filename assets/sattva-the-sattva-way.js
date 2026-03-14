@@ -9,6 +9,7 @@
   const prevBtn = section.querySelector('[data-sattva-way-prev]');
   const nextBtn = section.querySelector('[data-sattva-way-next]');
   const slides = section.querySelectorAll('[data-sattva-way-slide]');
+  const dots = section.querySelectorAll('[data-sattva-way-dot]');
 
   if (!slider || slides.length <= 1) return;
 
@@ -19,6 +20,9 @@
     currentIndex = ((index % len) + len) % len;
     slides.forEach(function (slide, i) {
       slide.classList.toggle('is-active', i === currentIndex);
+    });
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle('is-active', i === currentIndex);
     });
   }
 
@@ -32,4 +36,10 @@
       goTo(currentIndex + 1);
     });
   }
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      var index = parseInt(dot.getAttribute('data-index'), 10);
+      if (!isNaN(index)) goTo(index);
+    });
+  });
 })();

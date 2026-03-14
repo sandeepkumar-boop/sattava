@@ -59,7 +59,7 @@
   }
   .sattva-hero-banner {
     position: relative;
-    top: -83px;
+    top: -90px;
   }
 }
 
@@ -135,7 +135,7 @@
 
 .sattva-hero-banner__heading {
   font-family: 'Playfair Display', serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 28px;
   line-height: 1.35;
   color: #fff;
@@ -165,7 +165,7 @@
   padding: 16px;
   background: #fff;
   color: var(--sattva-hero-primary);
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.75;

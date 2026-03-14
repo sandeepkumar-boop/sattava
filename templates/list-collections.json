@@ -1,18 +1,1 @@
-{
-  "sections": {
-    "main": {
-      "type": "main-list-collections",
-      "settings": {
-        "title": "Explore Our Collections",
-        "sort": "alphabetical_reversed",
-        "image": "collection",
-        "image_ratio": "landscape",
-        "image_fit": "cover",
-        "show_desc": true
-      }
-    }
-  },
-  "order": [
-    "main"
-  ]
-}
+{"sections":{"main":{"type":"main-list-collections","settings":{"title":"Explore Our Collections","sort":"alphabetical_reversed","color_scheme":"","image":"collection","image_ratio":"landscape","image_fit":"cover","show_desc":true,"overlay_opacity":0.3,"collections_to_show":1,"show_button":true,"button_label":"Explore Collection","button_style":"secondary","padding_top":"no-indent","padding_bottom":"l"}}},"order":["main"]}

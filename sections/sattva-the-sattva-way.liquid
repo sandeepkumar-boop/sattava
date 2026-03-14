@@ -46,6 +46,7 @@
                   width="600"
                   height="400"
                 >
+                  <div class="sattva-way-media__overlay"></div>
               {% else %}
                 <div class="sattva-the-sattva-way__placeholder"></div>
               {% endif %}
@@ -70,6 +71,12 @@
       </div>
       {% assign image_blocks = section.blocks | where: 'type', 'image_slide' %}
       {% if image_blocks.size > 1 %}
+        <div class="sattva-the-sattva-way__pagination" aria-label="{{ 'general.pagination.label' | t }}">
+          {% for block in image_blocks %}
+            <button type="button" class="sattva-the-sattva-way__pagination-dot{% if forloop.first %} is-active{% endif %}" data-sattva-way-dot data-index="{{ forloop.index0 }}" aria-label="{{ 'general.pagination.page' | t: number: forloop.index }}">
+            </button>
+          {% endfor %}
+        </div>
         <button type="button" class="sattva-the-sattva-way__nav sattva-the-sattva-way__nav--prev" aria-label="{{ 'general.pagination.previous' | t }}" data-sattva-way-prev>
           {% render 'icon-caret-left' %}
         </button>

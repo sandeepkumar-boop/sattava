@@ -1,4 +1,4 @@
-/* Sattva The Sattva Way - BEM, Figma match */
+/* Sattva The Sattva Way - Updated to match design */
 .sattva-the-sattva-way {
   background: #F8F6F3;
 }
@@ -13,88 +13,124 @@
 
 @media screen and (min-width: 990px) {
   .sattva-the-sattva-way__container {
-    grid-template-columns: 1fr 3fr;
-    gap: 3rem;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
     padding-left: 46px;
     padding-right: 46px;
-    align-items: start;
+    align-items: center;
   }
+}
+
+.sattva-way-media__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+/* LEFT SIDE - Content */
+.sattva-the-sattva-way__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .sattva-the-sattva-way__title {
   font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 1.4;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.2;
   color: #000;
-  margin: 0 0 1.5rem;
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
 @media screen and (min-width: 750px) {
   .sattva-the-sattva-way__title {
-    font-size: 40px;
+    font-size: 48px;
   }
 }
 
 .sattva-the-sattva-way__list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .sattva-the-sattva-way__list-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 0.5rem;
+  gap: 12px;
 }
 
 .sattva-the-sattva-way__bullet {
   flex-shrink: 0;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #000;
 }
 
 .sattva-the-sattva-way__list-text {
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 500;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
-  color: #282828;
+  line-height: 1.6;
+  color: #000;
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-the-sattva-way__list-text {
+    font-size: 18px;
+  }
 }
 
 .sattva-the-sattva-way__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px;
-  background: #601115;
+  padding: 14px 32px;
+  background: #6B1419;
   color: #fff;
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.5;
   text-decoration: none;
-  border-radius: 6px;
-  text-transform: capitalize;
+  border-radius: 0;
+  text-transform: none;
+  align-self: flex-start;
+  transition: background 0.3s ease;
 }
 
 .sattva-the-sattva-way__button:hover {
-  opacity: 0.92;
+  background: #8B1E23;
 }
 
+/* RIGHT SIDE - Media/Carousel */
 .sattva-the-sattva-way__media {
   position: relative;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .sattva-the-sattva-way__slider {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   background: #e8e4df;
+  width: 100%;
+}
+
+@media screen and (min-width: 990px) {
+  .sattva-the-sattva-way__slider {
+    aspect-ratio: 2 / 1;
+  }
 }
 
 .sattva-the-sattva-way__slide {
@@ -102,7 +138,7 @@
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .sattva-the-sattva-way__slide.is-active {
@@ -130,7 +166,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  aspect-ratio: 16 / 10;
 }
 
 .sattva-the-sattva-way__placeholder {
@@ -139,83 +174,131 @@
   background: #e8e4df;
 }
 
+/* Text overlay on image */
 .sattva-the-sattva-way__media-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 1rem;
-  background: linear-gradient(transparent, rgba(0,0,0,0.5));
   flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  z-index: 3;
+}
+
+@media screen and (max-width: 749px) {
+  .sattva-the-sattva-way__media-overlay {
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+  }
 }
 
 .sattva-the-sattva-way__media-heading {
   font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1.3;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
   color: #fff;
   margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 750px) {
+  .sattva-the-sattva-way__media-heading {
+    font-size: 40px;
+  }
 }
 
 .sattva-the-sattva-way__media-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 20px;
+  padding: 12px 28px;
   background: #fff;
-  color: #601115;
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  color: #000;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 14px;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 0;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .sattva-the-sattva-way__media-btn:hover {
-  opacity: 0.92;
+  background: #f5f5f5;
 }
 
-/* Prev/next buttons */
+/* Navigation arrows */
 .sattva-the-sattva-way__nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 4;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: #fff;
-  color: #000;
+  border: none;
+  background: transparent;
+  color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: opacity 0.2s, border-color 0.2s;
+  transition: opacity 0.3s ease;
 }
 
 .sattva-the-sattva-way__nav:hover {
-  border-color: rgba(0, 0, 0, 0.3);
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 .sattva-the-sattva-way__nav--prev {
-  left: 8px;
+  left: 16px;
 }
 
 .sattva-the-sattva-way__nav--next {
-  right: 8px;
+  right: 16px;
 }
 
 .sattva-the-sattva-way__nav svg {
-  width: 14px;
-  height: 14px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Pagination dots */
+.sattva-the-sattva-way__pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sattva-the-sattva-way__pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.sattva-the-sattva-way__pagination-dot:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.sattva-the-sattva-way__pagination-dot.is-active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.1);
 }
